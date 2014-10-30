@@ -1,11 +1,5 @@
 apply plugin: 'com.android.application'
 
-dependencies {
-    compile 'com.android.support:support-v13:21.0.0'
-    compile 'com.android.support:recyclerview-v7:21.0.0'
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-}
-
 android {
     compileSdkVersion Integer.valueOf(androidCompileSdkVersionProp)
     buildToolsVersion androidBuildToolsVersionProp
@@ -23,7 +17,6 @@ android {
         buildConfigField "String", "BUILD_TIME", "\"$buildTime\""
     }
 
-
     buildTypes {
         debug {
             runProguard false
@@ -33,4 +26,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+}
+
+dependencies {
+    compile 'com.android.support:support-v13:21.0.0'
+    compile 'com.android.support:recyclerview-v7:21.0.0'
+    compile fileTree(dir: 'libs', include: ['*.jar'])
 }
